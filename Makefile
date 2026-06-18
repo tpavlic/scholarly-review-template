@@ -34,8 +34,10 @@ NEWDIR := round-$(NEXT)
 endif
 
 # `make new` scaffolds a Markdown review by default; `make new TEX=1` scaffolds
-# a LaTeX one (review.tex instead of review.md).
-ifdef TEX
+# a LaTeX one (review.tex instead of review.md). Test the origin rather than
+# `ifdef TEX`: make has a built-in default TEX = tex, and so ifdef would always
+# be true and always pick LaTeX. Only an explicit command-line TEX counts.
+ifeq ($(origin TEX),command line)
 REVIEW := review.tex
 else
 REVIEW := review.md
