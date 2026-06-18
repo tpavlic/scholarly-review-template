@@ -1,15 +1,7 @@
----
-title: "Review of: <MANUSCRIPT TITLE>"
-date: ""        # e.g. 2026-06-17
-# Peer reviews are normally anonymous; leave author unset.
----
+# Review of: [MANUSCRIPT TITLE]
 
-<!--
-Manuscript ID  : <ID>
-Venue          : <Journal / Conference>
-Round          : 1
-Recommendation : <reject | major revision | minor revision | accept>
--->
+<!-- Peer reviews are normally anonymous; do not include your name. -->
+<!-- On a re-review, note the round in the title, e.g. "... (Round 2)". -->
 
 ## Summary of the submission
 
@@ -19,8 +11,9 @@ Recommendation : <reject | major revision | minor revision | accept>
 ## Assessment
 
 <!-- Your overall judgment and the single most important reason behind your
-     recommendation. Leave the accept/reject decision itself to the editor;
-     give them a clear, reasoned recommendation. -->
+     recommendation. Leave the accept/reject decision itself to the editor. -->
+
+**Recommendation:** [reject | major revision | minor revision | accept]
 
 ## Major comments
 
