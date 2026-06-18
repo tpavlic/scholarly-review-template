@@ -1,0 +1,8 @@
+% Shared typography for review PDFs: Times-style serif (newtx), 1in margins,
+% and block paragraphs. Loaded by review.tex (\input) and by the Markdown build
+% via pandoc (--include-in-header), and so a review produces the same-looking
+% PDF whether it is written in Markdown or LaTeX.
+\usepackage[margin=1in]{geometry}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+\usepackage{parskip}
