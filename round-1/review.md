@@ -1,7 +1,7 @@
 ---
 title: "Review of: <MANUSCRIPT TITLE>"
 date: ""        # e.g. 2026-06-17
-# Peer reviews are normally anonymous -- leave author unset.
+# Peer reviews are normally anonymous; leave author unset.
 ---
 
 <!--
@@ -47,5 +47,5 @@ Recommendation : <reject | major revision | minor revision | accept>
 The authors addressed my previous comments as follows. Numbering refers to
 my round-1 review (see ../round-1/review.md).
 
-1. **[Prev major 1]** -- resolved | partially addressed | not addressed:
+1. **[Prev major 1]** (resolved | partially addressed | not addressed):
      ============================================================ -->

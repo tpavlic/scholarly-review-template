@@ -5,7 +5,7 @@
 # latexmk).
 #
 #   make              build the latest round's review PDF (see ROUND below)
-#   make new          scaffold the next round from templates/
+#   make new          scaffold the next round from templates/ (add TEX=1 for LaTeX)
 #   make submit       copy the review into submitted/ (PDF if built, else the .md)
 #   make clean        remove build artifacts (aux files and the built PDF)
 #   make help         list targets
@@ -14,7 +14,7 @@
 # forwards to this one with ROUND set from the folder name.
 
 # ROUND selects which round-N/ folder to act on. With no ROUND given it defaults
-# to the highest-numbered round that exists, so a bare `make` follows you into
+# to the highest-numbered round that exists, and so a bare `make` follows you into
 # round-2/ once you have created it. Override explicitly to revisit an earlier
 # round (or jump ahead): make ROUND=1 pdf
 LATEST := $(shell ls -d round-*/ 2>/dev/null | sed -E 's:round-([0-9]+)/:\1:' | sort -n | tail -1)
@@ -31,6 +31,14 @@ ifeq ($(origin ROUND),command line)
 NEWDIR := round-$(ROUND)
 else
 NEWDIR := round-$(NEXT)
+endif
+
+# `make new` scaffolds a Markdown review by default; `make new TEX=1` scaffolds
+# a LaTeX one (review.tex instead of review.md).
+ifdef TEX
+REVIEW := review.tex
+else
+REVIEW := review.md
 endif
 
 PANDOC     ?= pandoc
@@ -70,11 +78,11 @@ submit:
 new:
 	@mkdir -p "$(NEWDIR)/manuscript" "$(NEWDIR)/submitted"
 	@touch "$(NEWDIR)/manuscript/.gitkeep" "$(NEWDIR)/submitted/.gitkeep"
-	@[ -f "$(NEWDIR)/review.md" ]  || cp templates/review.md  "$(NEWDIR)/review.md"
+	@[ -f "$(NEWDIR)/$(REVIEW)" ]  || cp templates/$(REVIEW)  "$(NEWDIR)/$(REVIEW)"
 	@[ -f "$(NEWDIR)/notes.md" ]   || cp templates/notes.md   "$(NEWDIR)/notes.md"
 	@[ -f "$(NEWDIR)/.latexmkrc" ] || cp templates/.latexmkrc "$(NEWDIR)/.latexmkrc"
 	@[ -f "$(NEWDIR)/Makefile" ]   || cp templates/round.mk   "$(NEWDIR)/Makefile"
-	@echo "==> scaffolded $(NEWDIR)/ (edit $(NEWDIR)/review.md)"
+	@echo "==> scaffolded $(NEWDIR)/ (edit $(NEWDIR)/$(REVIEW))"
 
 clean:
 	@-( cd "$(DIR)" && $(LATEXMK) -c review.tex ) >/dev/null 2>&1 || true
@@ -83,6 +91,6 @@ clean:
 
 help:
 	@echo "make [ROUND=n] pdf     build the round's review PDF"
-	@echo "make           new     scaffold the next round (or ROUND=n to force)"
+	@echo "make           new     scaffold the next round (ROUND=n to force; TEX=1 for LaTeX)"
 	@echo "make [ROUND=n] submit  copy review into submitted/ (PDF if built, else .md)"
 	@echo "make [ROUND=n] clean   remove build artifacts"
