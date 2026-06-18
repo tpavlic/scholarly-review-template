@@ -23,7 +23,8 @@ DIR    := round-$(ROUND)
 MD    := $(DIR)/review.md
 TEX   := $(DIR)/review.tex
 PDF   := $(DIR)/review.pdf
-PREAMBLE := $(DIR)/preamble.tex
+# Use a round-local preamble.tex if present, otherwise the shared template one.
+PREAMBLE := $(if $(wildcard $(DIR)/preamble.tex),$(DIR)/preamble.tex,templates/preamble.tex)
 
 # `make new` creates the next round automatically (latest + 1). An explicit
 # ROUND=N on the command line forces that specific round instead.
@@ -86,9 +87,8 @@ new:
 	@touch "$(NEWDIR)/manuscript/.gitkeep" "$(NEWDIR)/submitted/.gitkeep"
 	@[ -f "$(NEWDIR)/$(REVIEW)" ]  || cp templates/$(REVIEW)  "$(NEWDIR)/$(REVIEW)"
 	@[ -f "$(NEWDIR)/notes.md" ]   || cp templates/notes.md   "$(NEWDIR)/notes.md"
-	@[ -f "$(NEWDIR)/.latexmkrc" ]   || cp templates/.latexmkrc   "$(NEWDIR)/.latexmkrc"
-	@[ -f "$(NEWDIR)/preamble.tex" ] || cp templates/preamble.tex "$(NEWDIR)/preamble.tex"
-	@[ -f "$(NEWDIR)/Makefile" ]     || cp templates/round.mk     "$(NEWDIR)/Makefile"
+	@[ -f "$(NEWDIR)/.latexmkrc" ] || cp templates/.latexmkrc "$(NEWDIR)/.latexmkrc"
+	@[ -f "$(NEWDIR)/Makefile" ]   || cp templates/round.mk   "$(NEWDIR)/Makefile"
 	@echo "==> scaffolded $(NEWDIR)/ (edit $(NEWDIR)/$(REVIEW))"
 	@if [ -f "$(NEWDIR)/review.md" ] && [ -f "$(NEWDIR)/review.tex" ]; then \
 	  echo "warning: $(NEWDIR) has both review.md and review.tex; make builds review.md and ignores review.tex. Remove the one you do not want." >&2; \

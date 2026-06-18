@@ -15,3 +15,10 @@ $pdf_mode = 1;
 $out_dir = '.';
 $aux_dir = 'build';
 $emulate_aux = 1;
+
+# Find the shared review preamble (templates/preamble.tex) one level up, while
+# letting a round-local preamble.tex override it: the round's own folder (.) is
+# searched first, then ../templates, then the default TeX paths. This is read on
+# every in-folder latexmk run (command line or editor), and so a round needs no
+# preamble.tex of its own.
+$ENV{'TEXINPUTS'} = '.:../templates:' . ($ENV{'TEXINPUTS'} // '');

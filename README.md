@@ -25,6 +25,7 @@ with latexmk). A `Makefile` wraps both.
 |   |-- review.md
 |   |-- review.tex       LaTeX alternative (make new TEX=1)
 |   |-- notes.md
+|   |-- preamble.tex     shared PDF typography (used by both builds; not copied)
 |   |-- .latexmkrc       latexmk config (-> PDF, aux in build/)
 |   `-- round.mk         shim copied to each round as round-N/Makefile
 |-- round-1/
@@ -47,6 +48,12 @@ parent folders, and so a per-round copy is what makes a LaTeX build produce a PD
 (rather than a DVI) whether you run `make`, invoke `latexmk` inside the round
 folder, or let an editor extension build it. `make new` copies it from
 `templates/`.
+
+PDF typography (font, margins) lives in `templates/preamble.tex` and is shared
+by both builds, and so the Markdown and LaTeX outputs match. Rounds do not carry
+their own copy: the Markdown build points pandoc at the template, while a LaTeX
+build finds it through the round's `.latexmkrc`. Drop a `preamble.tex` into a
+round to override the typography for that round only.
 
 ## Quick start
 
