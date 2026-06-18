@@ -85,6 +85,9 @@ new:
 	@[ -f "$(NEWDIR)/.latexmkrc" ] || cp templates/.latexmkrc "$(NEWDIR)/.latexmkrc"
 	@[ -f "$(NEWDIR)/Makefile" ]   || cp templates/round.mk   "$(NEWDIR)/Makefile"
 	@echo "==> scaffolded $(NEWDIR)/ (edit $(NEWDIR)/$(REVIEW))"
+	@if [ -f "$(NEWDIR)/review.md" ] && [ -f "$(NEWDIR)/review.tex" ]; then \
+	  echo "warning: $(NEWDIR) has both review.md and review.tex; make builds review.md and ignores review.tex. Remove the one you do not want." >&2; \
+	fi
 
 clean:
 	@-( cd "$(DIR)" && $(LATEXMK) -c review.tex ) >/dev/null 2>&1 || true
