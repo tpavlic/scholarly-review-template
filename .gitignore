@@ -416,3 +416,14 @@ TSWLatexianTemp*
 # option is specified. Footnotes are the stored in a file with suffix Notes.bib.
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
+
+## Review template
+
+# latexmk auxiliary output (see .latexmkrc)
+build/
+
+# Ignore working/build PDFs, but keep submitted reviews and received
+# manuscripts (those folders hold the artifacts worth versioning).
+*.pdf
+!**/submitted/**
+!**/manuscript/**
