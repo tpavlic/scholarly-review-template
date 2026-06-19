@@ -1,4 +1,4 @@
-# Review of: [MANUSCRIPT TITLE]
+# Review of: *[Manuscript Title]*
 
 <!-- Peer reviews are normally anonymous; do not include your name. -->
 <!-- On a re-review, note the round in the title, e.g. "... (Round 2)". -->
