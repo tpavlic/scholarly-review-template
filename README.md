@@ -105,7 +105,7 @@ update the submitted record freely (and `git` keeps the history).
 Treat this repository as a *template*: clone it to keep your own local template
 copy, then start a fresh **private** copy from that for each manuscript you
 review, committing each round as the manuscript and your review evolve. Keep
-those review copies private (see [Confidentiality](#confidentiality)), since
+those review copies private (see [Confidentiality](#confidentiality)) because
 manuscripts and reviews are confidential. If you improve the template itself,
 contributions back are welcome as pull requests.
 
