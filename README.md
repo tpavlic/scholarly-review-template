@@ -102,13 +102,12 @@ update the submitted record freely (and `git` keeps the history).
 
 ## Per-review workflow
 
-Treat this repository as a *template*: start a fresh **private** copy for each
-manuscript you review, then commit each round as the manuscript and your review
-evolve. It is a GitHub template repository, so
-`gh repo create <name> --private --template tpavlic/scholarly-review-template`
-scaffolds a copy; a plain `git clone` works just as well for a purely local
-review. Keep any hosted copy private (see [Confidentiality](#confidentiality)),
-since manuscripts and reviews are confidential.
+Treat this repository as a *template*: clone it to keep your own local template
+copy, then start a fresh **private** copy from that for each manuscript you
+review, committing each round as the manuscript and your review evolve. Keep
+those review copies private (see [Confidentiality](#confidentiality)), since
+manuscripts and reviews are confidential. If you improve the template itself,
+contributions back are welcome as pull requests.
 
 ## Role of a coding assistant (`CLAUDE.md`)
 
