@@ -104,7 +104,10 @@ update the submitted record freely (and `git` keeps the history).
 
 Treat this repository as a *template*: start a fresh (private) copy for each
 manuscript you review, then commit each round as the manuscript and your review
-evolve.
+evolve. This repo is a GitHub template repository, so you can start a copy with
+the **Use this template** button on GitHub or with
+`gh repo create <name> --private --template tpavlic/scholarly-review-template`;
+a plain `git clone` works just as well for a purely local review.
 
 ## Role of a coding assistant (`CLAUDE.md`)
 
