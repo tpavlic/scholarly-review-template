@@ -18,7 +18,7 @@ and archive mechanitcs, not to form the evaluation.
 
 - `round-N/manuscript/`: the manuscript (and supplement) under review.
 - `round-N/review.md` (or `review.tex`): the review being written.
-- `round-N/notes.md`: private reading notes, never submitted.
+- `round-N/notes.md`: private reading notes, never submitted (see below).
 - `round-N/submitted/`: the archived record of what was submitted (the raw
   review.md, or a built PDF; the version-controlled record).
 - `templates/`: pristine templates; `make ROUND=N new` copies them.
@@ -26,6 +26,23 @@ and archive mechanitcs, not to form the evaluation.
 For a re-review, read the prior round's `review.md` (or `review.tex`) and
 check each point against the authors' response in the new round's
 `manuscript/`.
+
+### Using `notes.md`
+
+`notes.md` is a shared scratchpad for both the human reviewer and any
+assisting agent. Beyond the reviewer's own reading notes, the assistant may
+record durable, reusable facts here so later work (finalizing the review or
+a re-review) does not have to rediscover them: background on works the
+manuscript cites, and candidate sources the authors may have missed. The
+template seeds `Sources` subsections for these, but general facts and
+developing ideas can go anywhere in the body.
+
+Two limits apply. First, record what a source says (facts), not verdicts on
+the manuscript; forming the evaluation remains the reviewer's job. Second,
+`notes.md` is private working material -- it is never submitted, and,
+because it may quote the confidential manuscript or hold others' PDFs, it
+falls under the confidentiality rules above and is never committed to a
+public remote.
 
 ## Conventions for review structure and style
 
