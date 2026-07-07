@@ -119,8 +119,16 @@ on which a human reviewer builds. **It is not a co-reviewer.**
 Every review must reflect the human reviewer's own reading and judgment, and its
 substance must be the human reviewer's own comments. The assistant helps with
 organization, formatting, and the mechanics of building and archiving the
-review, not with forming the evaluation. See the confidentiality note below
-before pointing any assistant or cloud tool at a manuscript.
+review, not with forming the evaluation.
+
+In practice that organizing role is an active one while you read: the assistant
+can act as a scribe, capturing the observations you dictate, keeping `review.md`
+and `notes.md` current as you go so you can keep reading, and recording factual
+background on the sources you encounter (see `notes.md`). What it writes down is
+*your* reading; it contributes no assessment of its own.
+
+See the confidentiality note below before pointing any assistant or cloud tool
+at a manuscript.
 
 ## Confidentiality
 
