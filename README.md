@@ -119,7 +119,28 @@ copy, then start a fresh **private** copy from that for each manuscript you
 review, committing each round as the manuscript and your review evolve. Keep
 those review copies private (see [Confidentiality](#confidentiality)) because
 manuscripts and reviews are confidential. If you improve the template itself,
-contributions back are welcome as pull requests.
+make that change in your local template copy and contribute back with a pull
+request.
+
+Because a per-review copy is cloned from your local template copy, its
+`origin` points there by default, and a stray `git push` would land
+confidential review content in the template. Rename that remote and disable
+its push URL right after cloning so the mistake can't happen while `git pull`
+will reach the template for updates:
+
+```sh
+git clone /path/to/simple_review_template smith-jones-review
+cd smith-jones-review
+git remote rename origin template   # branch tracking follows the rename
+git remote set-url --push template DISABLED
+```
+
+From then on:
+
+```sh
+git pull   # still works: fetches from `template` and merges as usual
+git push   # fails fast: "fatal: 'DISABLED' does not appear to be a git repository"
+```
 
 ## Role of a coding assistant (`CLAUDE.md`)
 
