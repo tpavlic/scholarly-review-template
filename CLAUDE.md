@@ -61,6 +61,8 @@ conventions:
   contribution) should be separated from **minor** ones (wording, figures,
   references).
 - Comments should be numbered so that authors can respond point by point.
+- Minor comments should be ordered by the page on which they occur, with
+  comments spanning the whole manuscript placed first.
 - Comments should be specific and evidence based. Comments should cite
   sections, equations, figures, or line numbers and should quote the
   original manuscript where useful.

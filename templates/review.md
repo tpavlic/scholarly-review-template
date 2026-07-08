@@ -24,7 +24,8 @@
 
 ## Minor comments
 
-<!-- Typos, wording, figure/table fixes, references. -->
+<!-- Typos, wording, figure/table fixes, references. Order by the page on
+     which each occurs; comments spanning the whole manuscript go first. -->
 
 1.
 
