@@ -144,13 +144,12 @@ its own.
 See the confidentiality note below before pointing any assistant or cloud tool
 at a manuscript.
 
-Although the file is named `CLAUDE.md` for Claude Code, its guidance is not
-Claude-specific: it describes how any coding assistant should behave in this
+**Working with other agents:** The guidance in `CLAUDE.md` is not Claude
+specific. It describes how any coding assistant should behave in this
 repository. Other agents read a differently named file (Codex and a growing
 number of tools use `AGENTS.md`). To use one of them, copy or symlink
-`CLAUDE.md` to the name it expects (for example, `ln -s CLAUDE.md AGENTS.md`);
-a symlink rather than a rename keeps Claude Code working from the same
-content.
+`CLAUDE.md` to the name it expects (for example, `ln -s CLAUDE.md AGENTS.md`); a
+symlink rather than a rename keeps Claude Code working from the same content.
 
 ## Confidentiality
 
