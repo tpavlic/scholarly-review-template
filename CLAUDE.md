@@ -35,7 +35,13 @@ record durable, reusable facts here so later work (finalizing the review or
 a re-review) does not have to rediscover them: background on works the
 manuscript cites, and candidate sources the authors may have missed. The
 template seeds `Sources` subsections for these, but general facts and
-developing ideas can go anywhere in the body.
+developing ideas can go anywhere in the body. When you add to `notes.md`
+as the reviewer reads, file each note where it belongs (the matching
+`Sources` subsection or the relevant spot in the body) and fold it into
+related notes already there instead of appending raw entries to the end of
+a list. Keep it navigable rather than a verbatim transcript; improving
+placement and wording is welcome, so long as the reviewer's meaning is
+preserved and you add no assessment of your own.
 
 Two limits apply. First, record what a source says (facts), not verdicts on
 the manuscript; forming the evaluation remains the reviewer's job. Second,
