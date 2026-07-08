@@ -39,7 +39,7 @@ developing ideas can go anywhere in the body.
 
 Two limits apply. First, record what a source says (facts), not verdicts on
 the manuscript; forming the evaluation remains the reviewer's job. Second,
-`notes.md` is private working material -- it is never submitted, and,
+`notes.md` is private working material: it is never submitted, and,
 because it may quote the confidential manuscript or hold others' PDFs, it
 falls under the confidentiality rules above and is never committed to a
 public remote.

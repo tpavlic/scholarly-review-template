@@ -4,10 +4,12 @@ A small, self-contained scaffold for writing, building, and archiving peer
 reviews of scholarly manuscripts, including re-reviews of revised submissions
 across multiple rounds.
 
-Reviews can be written in **Markdown** (built with pandoc) or **LaTeX** (built
-with latexmk). A `Makefile` wraps both.
+Reviews can be written in **Markdown** (built with `pandoc`) or **LaTeX** (built
+with `latexmk`). A `Makefile` wraps both.
 
 - [Structure](#structure)
+  - [Reviews and re-reviews in `round-N` folders](#reviews-and-re-reviews-in-round-n-folders)
+  - [Templates shared across `round-N` folders and how to override them](#templates-shared-across-round-n-folders-and-how-to-override-them)
 - [Quick start](#quick-start)
   - [Submitting: PDF if available, Markdown otherwise](#submitting-pdf-if-available-markdown-otherwise)
 - [Per-review workflow](#per-review-workflow)
@@ -38,20 +40,24 @@ with latexmk). A `Makefile` wraps both.
 `-- round-2/ ...         one folder per re-review round, created on demand
 ```
 
-(README.md, LICENSE, and the boilerplate `.gitignore` are omitted above.) Each
-re-review gets its own `round-N/` folder, pairing the revision you received with
-the review you wrote and submitted.
+In addition, `README.md`, `LICENSE`, and the boilerplate `.gitignore` are
+included in this repository but omitted from the tree above.
 
-The `.latexmkrc` lives **inside each round**, not at the repository root.
-latexmk reads `./.latexmkrc` from its working directory and does not search
-parent folders, and so a per-round copy is what makes a LaTeX build produce a PDF
-(rather than a DVI) whether you run `make`, invoke `latexmk` inside the round
-folder, or let an editor extension build it. `make new` copies it from
-`templates/`.
+### Reviews and re-reviews in `round-N` folders
+
+Each re-review gets its own `round-N/` folder, pairing the revision you received
+with the review you wrote and submitted. The `.latexmkrc` lives **inside each
+round**, not at the repository root. `latexmk` reads `./.latexmkrc` from its
+working directory and does not search parent folders, and so a per-round copy is
+what makes a LaTeX build produce a PDF (rather than a DVI and PS) whether you
+run `make`, invoke `latexmk` inside the round folder, or let an editor extension
+build it. `make new` copies it from `templates/`.
+
+### Templates shared across `round-N` folders and how to override them
 
 PDF typography (font, margins) lives in `templates/preamble.tex` and is shared
-by both builds, and so the Markdown and LaTeX outputs match. Rounds do not carry
-their own copy: the Markdown build points pandoc at the template, while a LaTeX
+by both builds so that the Markdown and LaTeX outputs match. Rounds do not carry
+their own copy: the Markdown build points `pandoc` at the template, and a LaTeX
 build finds it through the round's `.latexmkrc`. Drop a `preamble.tex` into a
 round to override the typography for that round only.
 
@@ -70,7 +76,7 @@ make help         # all targets
 The build always focuses on the **latest (highest) round**. Creating a round
 shifts that focus automatically: after `make new` (which scaffolds the next
 round), a bare `make` builds the new round. To act on an earlier round (or
-any specific one), name it explicitly with `ROUND=`, which works backwards too:
+any specific one), name it explicitly with `ROUND=`, which works backward too:
 
 ```sh
 make new          # create the next round (latest + 1)
@@ -83,7 +89,7 @@ Each `round-N` subfolder carries a small shim `Makefile` that forwards to the ro
 Makefile with `ROUND` set from the folder name. So, `make`, `make submit`, etc.
 act on that round, and `make new` from inside a round still creates the next one.
 
-By default builds use `pdflatex`. For richer Unicode or custom fonts, build
+By default, builds use `pdflatex`. For richer Unicode or custom fonts, build
 Markdown with `make PDF_ENGINE=xelatex`.
 
 ### Submitting: PDF if available, Markdown otherwise
@@ -92,13 +98,13 @@ The `submitted/` folder holds the git-tracked record of what you sent.
 `make submit` copies the review into it:
 
 - if you built a PDF (ran `make`), it copies `review-round-N.pdf`;
-- otherwise it copies the raw `review.md` as `review-round-N.md`, and so a plain
+- otherwise, it copies the raw `review.md` as `review-round-N.md`, and so a plain
   Markdown review you never built is archived as-is.
 
-`make submit` does not build on its own, and so it works standalone for a Markdown
-submission; run `make` first when you want the PDF archived. It overwrites the
-existing copy, which is fine: the folder is version-controlled, and so you can
-update the submitted record freely (and `git` keeps the history).
+`make submit` works standalone for a Markdown submission; it does not build on
+its own. Run `make` first when you want the PDF archived. It overwrites the
+existing copy. Because the folder is version controlled, you can update the
+submitted record freely (and `git` keeps the history).
 
 ## Per-review workflow
 
@@ -112,7 +118,7 @@ contributions back are welcome as pull requests.
 ## Role of a coding assistant (`CLAUDE.md`)
 
 This repository includes a `CLAUDE.md` with guidance for LLM-based coding
-assistants. Its scope is deliberately narrow.  The assistant is meant to
+assistants. Its scope is deliberately narrow. The assistant is meant to
 **maintain the structure of the repository and provide an initial scaffold**
 on which a human reviewer builds. **It is not a co-reviewer.**
 
@@ -121,7 +127,7 @@ substance must be the human reviewer's own comments. The assistant helps with
 organization, formatting, and the mechanics of building and archiving the
 review, not with forming the evaluation.
 
-In practice that organizing role is an active one while you read: the assistant
+In practice, that organizing role is an active one while you read: the assistant
 can act as a scribe, capturing the observations you dictate, keeping `review.md`
 and `notes.md` current as you go so you can keep reading, and recording factual
 background on the sources you encounter (see `notes.md`). What it writes down is

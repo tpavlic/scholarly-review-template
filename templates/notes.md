@@ -1,7 +1,7 @@
 # Private reading notes
 
 Scratch space for working through the manuscript. Not for submission.
-Facts, developing ideas, and reactions can go anywhere below -- the
+Facts, developing ideas, and reactions can go anywhere below. The
 headings are prompts, not required structure. Delete any you don't use.
 
 ## Open questions
@@ -24,4 +24,4 @@ not verdicts); the evaluation stays the reviewer's.
 
 ### Possibly relevant sources not yet cited
 
-- Sources the authors may need to add -- candidates I haven't decided on.
+- Sources the authors may need to add, but I haven't decided whether to raise them.
