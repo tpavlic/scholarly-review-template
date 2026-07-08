@@ -62,6 +62,12 @@ pdf:
 	  echo "==> pandoc $(MD)"; \
 	  $(PANDOC) "$(MD)" -o "$(PDF)" --pdf-engine=$(PDF_ENGINE) $(HEADER); \
 	elif [ -f "$(TEX)" ]; then \
+	  if ! command -v $(LATEXMK) >/dev/null 2>&1; then \
+	    echo "error: $(LATEXMK) not found; it is needed to build $(TEX)." >&2; \
+	    echo "  Install it (e.g. 'tlmgr install latexmk', or your distro's latexmk package)," >&2; \
+	    echo "  or build $(DIR)/review.pdf yourself, then run 'make ROUND=$(ROUND) submit' to archive it." >&2; \
+	    exit 1; \
+	  fi; \
 	  echo "==> latexmk $(TEX)"; \
 	  ( cd "$(DIR)" && $(LATEXMK) review.tex ); \
 	else \

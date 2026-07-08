@@ -4,8 +4,10 @@ A small, self-contained scaffold for writing, building, and archiving peer
 reviews of scholarly manuscripts, including re-reviews of revised submissions
 across multiple rounds.
 
-Reviews can be written in **Markdown** (built with `pandoc`) or **LaTeX** (built
-with `latexmk`). A `Makefile` wraps both.
+Reviews can be written in **Markdown** (*optionally* built to PDF with `pandoc`)
+or **LaTeX** (built to PDF with `latexmk`). A `Makefile` wraps both. If your
+venue accepts Markdown or a review pasted into web forms, you may skip building
+a typeset PDF and use `review.md` directly.
 
 - [Structure](#structure)
   - [Reviews and re-reviews in `round-N` folders](#reviews-and-re-reviews-in-round-n-folders)
@@ -72,6 +74,10 @@ make submit       # copy review PDF [otherwise Markdown] into round-N/submitted/
 make new          # scaffold the next round for a re-review
 make help         # all targets
 ```
+
+If you submit Markdown by upload or paste, you can ignore the PDF build: hand
+off `review.md`, or run `make submit` to archive it. The other `make` targets
+matter only when you want a PDF.
 
 The build always focuses on the **latest (highest) round**. Creating a round
 shifts that focus automatically: after `make new` (which scaffolds the next
