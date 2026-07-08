@@ -144,6 +144,14 @@ its own.
 See the confidentiality note below before pointing any assistant or cloud tool
 at a manuscript.
 
+Although the file is named `CLAUDE.md` for Claude Code, its guidance is not
+Claude-specific: it describes how any coding assistant should behave in this
+repository. Other agents read a differently named file (Codex and a growing
+number of tools use `AGENTS.md`). To use one of them, copy or symlink
+`CLAUDE.md` to the name it expects (for example, `ln -s CLAUDE.md AGENTS.md`);
+a symlink rather than a rename keeps Claude Code working from the same
+content.
+
 ## Confidentiality
 
 Manuscripts under review are confidential, unpublished work.
@@ -157,7 +165,7 @@ Manuscripts under review are confidential, unpublished work.
 ## License
 
 The template files (Makefile, configuration, templates) are released under the
-MIT License (see `LICENSE`). That license covers the scaffold only, not any
-manuscript or review content you add.
+MIT License (see [`LICENSE`](LICENSE)). That license covers the scaffold only,
+not any manuscript or review content you add.
 
 Copyright (c) 2026 Theodore P. Pavlic
