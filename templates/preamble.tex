@@ -6,3 +6,11 @@
 \usepackage{newtxtext}
 \usepackage{newtxmath}
 \usepackage{parskip}
+
+% Map glyphs to Unicode so that copy-paste and screen readers get the right
+% characters out of the PDF. pdfTeX only: the primitive is undefined under
+% LuaTeX and in DVI builds, where this is a no-op.
+\ifdefined\pdfgentounicode
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+\fi

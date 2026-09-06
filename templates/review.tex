@@ -1,6 +1,23 @@
 % Peer reviews are normally anonymous; do not include your name.
 % On a re-review, note the round in the title, e.g. "... (Round 2)".
 
+% Tagged-PDF metadata: activates only on LaTeX formats new enough for mature
+% PDF/UA-2 tagging (TeX Live 2025 or later) and only when the engine emits PDF
+% directly, so the DVI route (plain latex) and older formats build the same
+% document untagged. Must precede \documentclass, and so it cannot live in
+% preamble.tex. Markdown rounds get this separately, through pandoc's own
+% pdfstandard variable. If a submission portal rejects PDF 2.0, change ua-2 to
+% ua-1 and drop the pdfversion line.
+\ifdefined\IfFormatAtLeastTF
+    \IfFormatAtLeastTF{2025-06-01}{%
+        \ifnum\ifdefined\pdfoutput\pdfoutput\else\ifdefined\outputmode\outputmode\else 0\fi\fi>0
+            \DocumentMetadata{lang=en-US,
+                              pdfversion=2.0,
+                              pdfstandard=ua-2,
+                              tagging=on}
+        \fi}{}
+\fi
+
 \documentclass[11pt]{article}
 
 \input{preamble}        % shared typography, also used by the Markdown build

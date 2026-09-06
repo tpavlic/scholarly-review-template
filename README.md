@@ -63,6 +63,31 @@ their own copy: the Markdown build points `pandoc` at the template, and a LaTeX
 build finds it through the round's `.latexmkrc`. Drop a `preamble.tex` into a
 round to override the typography for that round only.
 
+### Accessible (tagged) PDFs
+
+`templates/review.tex` opens with a guarded `\DocumentMetadata` block that
+requests PDF/UA-2 tagging. It activates only on LaTeX formats from `2025-06-01`
+onward and only when the engine writes PDF directly, and so an older TeX Live,
+or a DVI build with plain `latex`, produces the same document untagged and
+without error. The block has to precede `\documentclass`, which is why it sits
+in `review.tex` rather than in the shared `preamble.tex`. If a submission portal
+rejects PDF 2.0, change `ua-2` to `ua-1` and drop the `pdfversion` line.
+
+Markdown rounds are not covered by that block, as pandoc offers no hook before
+`\documentclass` other than its own `pdfstandard` variable, and what that
+variable emits is unguarded. Once your TeX Live is new enough, add it to the
+YAML metadata at the top of `review.md`:
+
+```yaml
+---
+lang: en-US
+pdfstandard:
+  version: "2.0"
+  standards: [ua-2]
+  tagging: true
+---
+```
+
 ## Quick start
 
 Each of these `make` commands can be applied at the repository root or within a
