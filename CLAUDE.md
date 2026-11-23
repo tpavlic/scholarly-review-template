@@ -61,6 +61,9 @@ conventions:
   contribution) should be separated from **minor** ones (wording, figures,
   references).
 - Comments should be numbered so that authors can respond point by point.
+- A "Questions for the authors" section is optional and holds only requests
+  for information that the major and minor comments do not already make;
+  omit it rather than restate a comment as a question.
 - Minor comments should be ordered by the page on which they occur, with
   comments spanning the whole manuscript placed first.
 - Comments should be specific and evidence based. Comments should cite
