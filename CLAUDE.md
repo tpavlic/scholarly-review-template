@@ -80,6 +80,11 @@ conventions:
   ("Section 2.1 would be accurate if ...", "The manuscript could be improved
   by ..."), not instruct the authors ("Please add ...", "The authors
   must ..."). Whether a change is required is the editor's call.
+- Each major comment should end with a paragraph labeled
+  "**Suggested revision:**" that states the change concretely, even if this
+  repeats the comment, unless the comment is short enough that the change is
+  unmistakable. The label keeps the advice framing while leaving no doubt
+  about what is being suggested.
 - Do not assume the reviewer will see the authors' response or the revision.
   The editor may ask for changes and decide on the revision without sending
   it back for review. Each comment should stand on its own as advice on the

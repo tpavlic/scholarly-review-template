@@ -21,7 +21,8 @@
      the contribution. Number them so authors can respond point by point.
      Describe what is wrong and how the manuscript could be improved rather
      than instructing the authors ("Please add ..."): reviewers advise, and
-     the editor decides. -->
+     the editor decides. End each comment with a "**Suggested revision:**"
+     paragraph stating the change, even if it repeats the comment. -->
 
 1.
 
