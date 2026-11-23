@@ -18,14 +18,18 @@
 ## Major comments
 
 <!-- Substantive issues affecting validity, novelty, soundness, or clarity of
-     the contribution. Number them so authors can respond point by point. -->
+     the contribution. Number them so authors can respond point by point.
+     Describe what is wrong and how the manuscript could be improved rather
+     than instructing the authors ("Please add ..."): reviewers advise, and
+     the editor decides. -->
 
 1.
 
 ## Minor comments
 
 <!-- Typos, wording, figure/table fixes, references. Order by the page on
-     which each occurs; comments spanning the whole manuscript go first. -->
+     which each occurs; comments spanning the whole manuscript go first.
+     Frame them as observations, as for the major comments. -->
 
 1.
 
@@ -33,10 +37,10 @@
 
 <!-- Optional, and usually empty. Put issues in the major or minor comments
      by default: the goal is a better manuscript for its eventual readers,
-     not an exchange with the authors. Ask a question only for information
-     that no comment already requests, typically where the answer decides
-     whether a change is needed. Do not restate a comment as a question;
-     delete this section if it would only repeat them. -->
+     not an exchange with the authors, and you may never see a reply.
+     Anything whose answer belongs in the paper is a comment, not a
+     question. Do not restate a comment as a question; delete this section
+     if it would only repeat them. -->
 
 1.
 

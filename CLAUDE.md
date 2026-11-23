@@ -64,9 +64,10 @@ conventions:
 - Issues should default to major or minor comments, because the goal is a
   better manuscript for its eventual readers rather than an exchange with
   the authors. A "Questions for the authors" section is optional and holds
-  only requests for information that the comments do not already make,
-  typically where the answer decides whether a change is needed; omit it
-  rather than restate a comment as a question.
+  only points that the comments do not already raise. Anything whose answer
+  belongs in the paper should be a comment instead, as the reviewer may
+  never see a reply; omit the section rather than restate a comment as a
+  question.
 - Minor comments should be ordered by the page on which they occur, with
   comments spanning the whole manuscript placed first.
 - Comments should be specific and evidence based. Comments should cite
@@ -74,6 +75,15 @@ conventions:
   original manuscript where useful.
 - Comments should be constructive and courteous. Critiques should be scoped
   to focus on the work, not the authors.
+- Reviewers advise; the editor decides. Comments should describe what is
+  wrong or missing in the manuscript and how it could be improved
+  ("Section 2.1 would be accurate if ...", "The manuscript could be improved
+  by ..."), not instruct the authors ("Please add ...", "The authors
+  must ..."). Whether a change is required is the editor's call.
+- Do not assume the reviewer will see the authors' response or the revision.
+  The editor may ask for changes and decide on the revision without sending
+  it back for review. Each comment should stand on its own as advice on the
+  current manuscript, not open a dialogue or promise a later check.
 - Recommendations should be given with reasons, and the phrasing should be
   respectful to the editor as the ultimate decision maker for accepting
   or rejecting the manuscript.
